@@ -12,5 +12,8 @@ jersey-ligthweight-app
 ### Running App
 ```
 ./gradlew jettyEclipseRun
+or shortcut
+./gradlew jER
 ```
-then you can access http://localhost:8080/sample/
+then you can access [http://localhost:8080/sample/](http://localhost:8080/sample)
+and you can see `sample`

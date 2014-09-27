@@ -26,7 +26,7 @@ idea {
         ipr.withXml { xml ->
             def mapping = xml.node.component.find { it.@name == "VcsDirectoryMappings" }.mapping
             mapping.@vcs = 'Git'
-            mapping.@directory = '$PROJECT_DIR$/..'
+            mapping.@directory = '$PROJECT_DIR$'
         }
     }
 }
