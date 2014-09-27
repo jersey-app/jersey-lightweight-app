@@ -10,6 +10,7 @@ jersey-ligthweight-app
 * Builder pattern
 
 ### Running App
+
 * Run as web application
 
 ```
@@ -19,13 +20,12 @@ or shortcut
 ```
 then you can access [http://localhost:8080/sample/](http://localhost:8080/sample)
 and you can see `sample`
-=======
-then you can access http://localhost:8080/sample/
 
 * Run as stand alone application
 
 ```
 ./gradlew run
+```
 
-then you can access http://localhost:8081/sample/
+then you can access [http://localhost:8081/sample/](http://localhost:8081/sample/)
 
