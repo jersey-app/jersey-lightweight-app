@@ -80,10 +80,6 @@ configure(clientProjects) {
 }
 
 configure(resourceProjects) {
-    ext {
-        servletVersion = '2.5'
-    }
-
     dependencies {
         compile(
                 clientProjects,
@@ -94,6 +90,7 @@ configure(resourceProjects) {
     }
 }
 
+// configure as web application (servlet 2.5)
 configure(webProjects) {
     apply plugin: 'jettyEclipse'
     apply plugin: 'war'
@@ -109,6 +106,19 @@ configure(webProjects) {
 
         runtime(
                 "org.glassfish.jersey.containers:jersey-container-servlet-core:$jerseyVersion"
+        )
+    }
+}
+
+// configured as stand alone application
+configure(project(':interfaces-web')) {
+    apply plugin: 'application'
+
+    mainClassName = "com.metaphor.interfaces.runner.StandaloneRunner"
+
+    dependencies {
+        compile(
+                "org.glassfish.jersey.containers:jersey-container-grizzly2-http:$jerseyVersion"
         )
     }
 }
