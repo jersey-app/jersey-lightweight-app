@@ -38,7 +38,26 @@ and you can see
     }]
 }
 ```
+when you can access
+[http://localhost:8080/api-docs/sample/](http://localhost:8080/api-docs/sample/)
 
+```
+{"apiVersion": "1.0.0", "swaggerVersion": "1.2", "basePath": "", "resourcePath": "/sample", "produces": ["application/json"], "apis": [
+    {
+        "path": "/sample",
+        "operations": [
+            {
+                "method": "GET",
+                "summary": "just to test the sample api",
+                "notes": "",
+                "type": "void",
+                "nickname": "get",
+                "parameters": []
+            }
+        ]
+    }
+]}
+```
 
 * Run as standalone application
 
