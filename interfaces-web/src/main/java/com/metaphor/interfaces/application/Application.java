@@ -1,14 +1,16 @@
 package com.metaphor.interfaces.application;
 
-import com.metaphor.sample.resource.SampleResource;
+import com.wordnik.swagger.jaxrs.listing.ApiListingResourceJSON;
+import com.wordnik.swagger.jersey.listing.JerseyApiDeclarationProvider;
+import com.wordnik.swagger.jersey.listing.JerseyResourceListingProvider;
 import org.glassfish.jersey.server.ResourceConfig;
-
-import javax.ws.rs.ApplicationPath;
 
 public class Application extends ResourceConfig {
 
     public Application() {
-
-        register(SampleResource.class);
+        packages("com.metaphor.sample.resource");
+        register(ApiListingResourceJSON.class);
+        register(JerseyApiDeclarationProvider.class);
+        register(JerseyResourceListingProvider.class);
     }
 }

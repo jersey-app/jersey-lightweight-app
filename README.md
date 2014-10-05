@@ -5,7 +5,6 @@ jersey-lightweight-app
 * Jersey overview
 * Starting codebase (a echo app)
 * Swagger for API
-* To-Do list
 * Guava: Predicate, Transform
 * Builder pattern
 
@@ -18,13 +17,32 @@ jersey-lightweight-app
 or 
 ./gradlew jER
 ```
-then you can access [http://localhost:8080/sample/](http://localhost:8080/sample)
-and you can see `sample`
+then you can access [http://localhost:8080/sample/](http://localhost:8080/sample/)
+
+and you can see `{"message":"sample"}`
+
+* Get JSON documentation
+
+After the start, you can access
+[http://localhost:8080/api-docs/](http://localhost:8080/api-docs)
+
+and you can see
+
+```
+{"apiVersion": "1.0.0", 
+ "swaggerVersion": "1.2", 
+ "apis": [
+    {
+        "path": "/sample",
+        "description": "A sample of jersey application"
+    }]
+}
+```
+
 
 * Run as standalone application
 
 ```
 ./gradlew run
 ```
-then you can access [http://localhost:8081/sample/](http://localhost:8081/sample) again.
-
+then you can access [http://localhost:8081/sample/](http://localhost:8081/sample/).
