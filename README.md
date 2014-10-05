@@ -1,4 +1,4 @@
-jersey-ligthweight-app
+jersey-lightweight-app
 ======================
 
 ### Learn jersey the hard way
@@ -9,23 +9,22 @@ jersey-ligthweight-app
 * Guava: Predicate, Transform
 * Builder pattern
 
-### Running App
+### Run App
 
 * Run as web application
 
 ```
 ./gradlew jettyEclipseRun
-or shortcut
+or 
 ./gradlew jER
 ```
 then you can access [http://localhost:8080/sample/](http://localhost:8080/sample)
 and you can see `sample`
 
-* Run as stand alone application
+* Run as standalone application
 
 ```
 ./gradlew run
 ```
-
-then you can access [http://localhost:8081/sample/](http://localhost:8081/sample/)
+then you can access [http://localhost:8081/sample/](http://localhost:8081/sample) again.
 
