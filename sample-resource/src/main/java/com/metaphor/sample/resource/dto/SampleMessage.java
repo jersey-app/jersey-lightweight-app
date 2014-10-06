@@ -1,7 +1,15 @@
 package com.metaphor.sample.resource.dto;
 
 import com.google.common.base.MoreObjects;
+import com.metaphor.sample.resource.SampleResource;
+import org.glassfish.jersey.linking.InjectLink;
+import org.glassfish.jersey.linking.InjectLinks;
 
+import static org.glassfish.jersey.linking.InjectLink.Style.ABSOLUTE_PATH;
+
+@InjectLinks(
+        {@InjectLink(resource=SampleResource.class, rel = "self", style = ABSOLUTE_PATH)}
+)
 public final class SampleMessage {
 
     private String message;
