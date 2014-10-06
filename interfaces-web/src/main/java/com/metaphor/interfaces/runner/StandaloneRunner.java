@@ -11,7 +11,7 @@ import static javax.ws.rs.core.UriBuilder.fromUri;
 public class StandaloneRunner {
 
     public static void main(String[] args) throws Exception {
-        URI baseUri = fromUri("http://localhost/").port(8081).build();
+        URI baseUri = fromUri("http://localhost/").port(8080).build();
         HttpServer server = GrizzlyHttpServerFactory.createHttpServer(baseUri, new Application());
         server.start();
         while (true) System.in.read();
