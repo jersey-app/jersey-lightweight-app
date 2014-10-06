@@ -2,11 +2,11 @@ package com.metaphor.sample.resource.dto;
 
 import com.google.common.base.MoreObjects;
 
-public class SampleMessage {
+public final class SampleMessage {
 
     private String message;
 
-    protected SampleMessage() {
+    private SampleMessage() {
     }
 
     public String getMessage() {

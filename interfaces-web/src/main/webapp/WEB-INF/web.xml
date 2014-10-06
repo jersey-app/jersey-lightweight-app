@@ -3,6 +3,10 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_5.xsd"
          version="2.5">
     <display-name>Service Web</display-name>
+    
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
 
     <servlet>
         <servlet-name>service-servlet</servlet-name>
@@ -16,7 +20,7 @@
 
     <servlet-mapping>
         <servlet-name>service-servlet</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/service/*</url-pattern>
     </servlet-mapping>
 
     <servlet>
