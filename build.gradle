@@ -68,10 +68,7 @@ subprojects {
                 "com.google.guava:guava:$guavaVersion",
                 "joda-time:joda-time:$jodaTimeVersion",
                 "org.glassfish.hk2:hk2-api:$hk2Version",
-                "org.slf4j:slf4j-nop:$slf4jVersion",
-                "com.wordnik:swagger-core_2.10:$swaggerVersion",
-                "com.wordnik:swagger-annotations:$swaggerVersion",
-                "com.wordnik:swagger-jersey2-jaxrs_2.10:$swaggerVersion"
+                "org.slf4j:slf4j-nop:$slf4jVersion"
         )
 
         testCompile(
@@ -94,7 +91,11 @@ configure(resourceProjects) {
                 "com.fasterxml.jackson.datatype:jackson-datatype-joda:$jacksonVersion",
                 "com.fasterxml.jackson.datatype:jackson-datatype-guava:$jacksonVersion",
                 "org.glassfish.jersey.core:jersey-common:$jerseyVersion",
-                "org.glassfish.jersey.media:jersey-media-json-jackson:$jerseyVersion"
+                "org.glassfish.jersey.media:jersey-media-json-jackson:$jerseyVersion",
+                "javax.servlet:servlet-api:$servletVersion",
+                "com.wordnik:swagger-core_2.10:$swaggerVersion",
+                "com.wordnik:swagger-annotations:$swaggerVersion",
+                "com.wordnik:swagger-jersey2-jaxrs_2.10:$swaggerVersion"
 
         )
     }

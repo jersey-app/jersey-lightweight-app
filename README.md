@@ -67,4 +67,4 @@ After the start, you can access [http://localhost:8080/](http://localhost:8080/)
 ```
 ./gradlew run
 ```
-then you can access [http://localhost:8080/service/sample/](http://localhost:8080/service/sample/).
+then you can access [http://localhost:8081/sample/](http://localhost:8081/sample/).
