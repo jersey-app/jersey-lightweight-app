@@ -20,7 +20,7 @@
 
     <servlet-mapping>
         <servlet-name>service-servlet</servlet-name>
-        <url-pattern>/service/*</url-pattern>
+        <url-pattern>/resources/*</url-pattern>
     </servlet-mapping>
 
     <servlet>
