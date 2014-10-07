@@ -9,6 +9,8 @@ import org.glassfish.jersey.server.ResourceConfig;
 public class Application extends ResourceConfig {
 
     public Application() {
+        setApplicationName("lightweight-app");
+
         packages("com.metaphor.sample.resource");
         register(DeclarativeLinkingFeature.class);
         register(ApiListingResourceJSON.class);
