@@ -1,10 +1,13 @@
 package com.metaphor.order.client.factory;
 
+import com.google.common.base.Predicate;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
+import static com.google.common.collect.FluentIterable.from;
 import static com.google.common.collect.ImmutableList.of;
 
 public class MockOrderRemoteService {
@@ -26,7 +29,16 @@ public class MockOrderRemoteService {
                 .build();
     }
 
-    public ImmutableList<MockOrder> orders(){
-        return orders;
+    public ImmutableList<MockOrder> orders(ImmutableSet<String> orderNumbers){
+        return from(orders).filter(in(orderNumbers)).toList();
+    }
+
+    private Predicate<MockOrder> in(final ImmutableSet<String> orderNumbers) {
+        return new Predicate<MockOrder>() {
+            @Override
+            public boolean apply(MockOrder order) {
+                return orderNumbers.contains(order.getNumber());
+            }
+        };
     }
 }

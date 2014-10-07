@@ -1,4 +1,4 @@
-package com.metaphor.order.resource.dto;
+package com.metaphor.order.client.model;
 
 import com.google.common.base.MoreObjects;
 import org.joda.time.DateTime;
@@ -69,9 +69,5 @@ public class Order {
                 .add("time", time)
                 .add("status", status)
                 .toString();
-    }
-
-    private enum OrderStatus {
-        COMMIT, ACCEPTED, COMPLETED
     }
 }

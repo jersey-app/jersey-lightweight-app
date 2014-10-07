@@ -1,5 +1,6 @@
 package com.metaphor.interfaces.application;
 
+import com.metaphor.order.client.binder.OrderBinder;
 import com.wordnik.swagger.jaxrs.listing.ApiListingResourceJSON;
 import com.wordnik.swagger.jersey.listing.JerseyApiDeclarationProvider;
 import com.wordnik.swagger.jersey.listing.JerseyResourceListingProvider;
@@ -16,5 +17,7 @@ public class Application extends ResourceConfig {
         register(ApiListingResourceJSON.class);
         register(JerseyApiDeclarationProvider.class);
         register(JerseyResourceListingProvider.class);
+
+        register(new OrderBinder());
     }
 }
