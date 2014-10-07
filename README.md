@@ -3,9 +3,9 @@ jersey-lightweight-app
 
 ### Learn jersey the hard way
 * Jersey overview
-* Starting codebase (a echo app)
+* Starting codebase
 * Swagger for API
-* Guava: Predicate, Transform
+* Guava: Predicates, Transform
 * Builder pattern
 
 ### Run App
@@ -42,7 +42,9 @@ when you can access
 [http://localhost:8080/resources/api-docs/sample/](http://localhost:8080/resources/api-docs/sample/)
 
 ```
-{"apiVersion": "1.0.0", "swaggerVersion": "1.2", "basePath": "", "resourcePath": "/sample", "produces": ["application/json"], "apis": [
+{"apiVersion": "1.0.0", "swaggerVersion": "1.2", "basePath": "", 
+"resourcePath": "/sample", "produces": ["application/json"], 
+"apis": [
     {
         "path": "/sample",
         "operations": [
@@ -68,3 +70,9 @@ After the start, you can access [http://localhost:8080/](http://localhost:8080/)
 ./gradlew run
 ```
 then you can access [http://localhost:8081/sample/](http://localhost:8081/sample/).
+
+## Learn jersey in action
+
+### order resource
+
+* You need to complete *canCancelledOrders* in order resource, and the business logic is contained in *@ApiOperation*
