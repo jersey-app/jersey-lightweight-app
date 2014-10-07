@@ -1,4 +1,7 @@
 include 'sample-client'
 include 'sample-resource'
 
+include 'order-client'
+include 'order-resource'
+
 include 'interfaces-web'

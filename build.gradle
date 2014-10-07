@@ -80,7 +80,11 @@ subprojects {
 }
 
 configure(clientProjects) {
-
+    dependencies {
+        compile(
+                repositoryProjects
+        )
+    }
 }
 
 configure(resourceProjects) {
