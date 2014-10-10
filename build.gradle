@@ -3,7 +3,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath (group: 'com.sahlbach.gradle', name: 'gradle-jetty-eclipse-plugin', version: '1.9.+')
+        classpath(group: 'com.sahlbach.gradle', name: 'gradle-jetty-eclipse-plugin', version: '1.9.+')
     }
 }
 
@@ -11,6 +11,7 @@ project.ext {
     clientProjects = project(":").subprojects.findAll { it.name.endsWith('-client') }
     resourceProjects = project(":").subprojects.findAll { it.name.endsWith('-resource') }
     webProjects = project(":").subprojects.findAll { it.name.endsWith('-web') }
+    commonProjects = project(":interfaces-commons")
 }
 
 
@@ -101,6 +102,18 @@ configure(resourceProjects) {
         testCompile(
                 "org.glassfish.jersey.test-framework:jersey-test-framework-core:$jerseyVersion",
                 "org.glassfish.jersey.test-framework.providers:jersey-test-framework-provider-grizzly2:$jerseyVersion"
+        )
+    }
+}
+
+configure(commonProjects) {
+    ext {
+        rsapiVersion = 2.0
+    }
+
+    dependencies {
+        compile(
+                "javax.ws.rs:javax.ws.rs-api:$rsapiVersion"
         )
     }
 }
