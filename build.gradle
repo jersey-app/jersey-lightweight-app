@@ -87,6 +87,7 @@ configure(resourceProjects) {
     dependencies {
         compile(
                 clientProjects,
+                commonProjects,
                 "com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:$jacksonVersion",
                 "com.fasterxml.jackson.datatype:jackson-datatype-joda:$jacksonVersion",
                 "com.fasterxml.jackson.datatype:jackson-datatype-guava:$jacksonVersion",

@@ -1,5 +1,6 @@
 package com.metaphor.interfaces.application;
 
+import com.metaphor.commons.http.CacheControlFilter;
 import com.metaphor.interfaces.ObjectMapperResolver;
 import com.metaphor.order.client.binder.OrderClientBinder;
 import com.metaphor.order.service.binder.OrderServiceBinder;
@@ -25,5 +26,6 @@ public class Application extends ResourceConfig {
         register(new OrderServiceBinder());
 
         register(ObjectMapperResolver.class);
+        register(CacheControlFilter.class);
     }
 }
