@@ -15,9 +15,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
-@Path("order")
+@Path("orders")
 @Produces(MediaType.APPLICATION_JSON)
-@Api(value = "/order", description = "order resource")
+@Api(value = "/orders", description = "orders resource")
 public class OrderResource {
 
     private final OrderService service;
