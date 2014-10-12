@@ -5,6 +5,7 @@ import com.metaphor.commons.annotations.CacheControl;
 import com.metaphor.order.client.model.Order;
 import com.metaphor.order.service.OrderService;
 import com.wordnik.swagger.annotations.*;
+import org.hibernate.validator.constraints.Length;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -32,8 +33,8 @@ public class OrderResource {
     @ApiResponses(value = {@ApiResponse(code = 400, message = "Invalid numbers supplied"),
             @ApiResponse(code = 404, message = "Order not found")})
     @CacheControl
-    public List<Order> getOrders(@PathParam("numbers")
-                                 @ApiParam(value = "some orders' number", allowMultiple = true) String numbers) {
+    public List<Order> getOrders(@ApiParam(value = "some orders' number", allowMultiple = true)
+                                 @Length(min = 6, max = 6) @PathParam("numbers") String numbers) {
         return service.orders(numbers);
     }
 
