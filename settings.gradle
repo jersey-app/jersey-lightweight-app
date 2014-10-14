@@ -1,3 +1,4 @@
+rootProject.name = 'jersey-ligthweight-app'
 include 'interfaces-commons'
 include 'sample-client'
 include 'sample-resource'
