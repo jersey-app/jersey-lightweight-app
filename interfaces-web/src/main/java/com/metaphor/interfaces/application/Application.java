@@ -8,7 +8,12 @@ import com.wordnik.swagger.jaxrs.listing.ApiListingResourceJSON;
 import com.wordnik.swagger.jersey.listing.JerseyApiDeclarationProvider;
 import com.wordnik.swagger.jersey.listing.JerseyResourceListingProvider;
 import org.glassfish.jersey.linking.DeclarativeLinkingFeature;
+import org.glassfish.jersey.process.Inflector;
 import org.glassfish.jersey.server.ResourceConfig;
+import org.glassfish.jersey.server.model.Resource;
+
+import javax.ws.rs.container.ContainerRequestContext;
+import javax.ws.rs.core.MediaType;
 
 public class Application extends ResourceConfig {
 
@@ -27,5 +32,18 @@ public class Application extends ResourceConfig {
 
         register(ObjectMapperResolver.class);
         register(CacheControlFilter.class);
+
+        Resource.Builder builder = Resource.builder()
+                .path("programmatic");
+        builder.addMethod("GET")
+                .produces(MediaType.TEXT_PLAIN_TYPE)
+                .handledBy(new Inflector<ContainerRequestContext, String>() {
+                    @Override
+                    public String apply(ContainerRequestContext containerRequestContext) {
+                        return "programmatic api";
+                    }
+                });
+
+        registerResources(builder.build());
     }
 }
