@@ -101,10 +101,7 @@ configure(resourceProjects) {
                 "com.wordnik:swagger-annotations:$swaggerVersion",
                 "com.wordnik:swagger-jersey2-jaxrs_2.10:$swaggerVersion"
         )
-        testCompile(
-                "org.glassfish.jersey.test-framework:jersey-test-framework-core:$jerseyVersion",
-                "org.glassfish.jersey.test-framework.providers:jersey-test-framework-provider-grizzly2:$jerseyVersion"
-        )
+
     }
 }
 
@@ -132,6 +129,11 @@ configure(webProjects) {
         compile resourceProjects
         compile(
                 "org.glassfish.jersey.core:jersey-server:$jerseyVersion"
+        )
+
+        testCompile(
+                "org.glassfish.jersey.test-framework:jersey-test-framework-core:$jerseyVersion",
+                "org.glassfish.jersey.test-framework.providers:jersey-test-framework-provider-grizzly2:$jerseyVersion"
         )
 
         runtime(

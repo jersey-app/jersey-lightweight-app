@@ -8,12 +8,6 @@ public class Order {
     private DateTime time;
     private OrderStatus status;
 
-    private Order(Builder builder) {
-        this.number = builder.number;
-        this.time = builder.time;
-        this.status = builder.status;
-    }
-
     public String getNumber() {
         return number;
     }
@@ -58,7 +52,12 @@ public class Order {
         }
 
         public Order build(){
-            return new Order(this);
+            Order order = new Order();
+            order.status = this.status;
+            order.number = this.number;
+            order.time = this.time;
+
+            return order;
         }
     }
 

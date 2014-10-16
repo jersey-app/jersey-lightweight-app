@@ -1,5 +1,6 @@
-package com.metaphor.sample.resource;
+package com.metaphor.resource;
 
+import com.metaphor.sample.resource.SampleResource;
 import com.metaphor.sample.resource.dto.SampleMessage;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
