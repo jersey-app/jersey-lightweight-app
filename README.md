@@ -6,7 +6,7 @@ jersey-lightweight-app
 * Starting codebase
 * Swagger for API
 * Guava: Predicates, Transform, Optional
-* Builder pattern - immutable
+* Builder pattern - immutable data
 
 ### Run App
 
