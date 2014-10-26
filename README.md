@@ -77,3 +77,8 @@ then you can access [http://localhost:8081/sample/](http://localhost:8081/sample
 ### order resource
 
 * You need to complete *canCancelledOrders* in order resource, and the business logic is contained in *@ApiOperation*
+
+### Questions
+
+* Why don't need to register *JacksonFeature*?
+* Jersey test cannot deserialize jodatime from string value? 
