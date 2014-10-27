@@ -81,4 +81,7 @@ then you can access [http://localhost:8081/sample/](http://localhost:8081/sample
 ### Questions
 
 * Why don't need to register *JacksonFeature*?
-* Jersey test cannot deserialize jodatime from string value? 
+* Jersey test cannot deserialize joda time from string value? 
+ if you use List.class instead of new GenericType<List<Order>>(){},
+ it will convert to List<LinkedHashMap<String, String>.
+
