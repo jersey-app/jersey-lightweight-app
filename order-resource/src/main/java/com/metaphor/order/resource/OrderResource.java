@@ -1,8 +1,8 @@
 package com.metaphor.order.resource;
 
-import com.google.common.collect.ImmutableList;
 import com.metaphor.commons.annotations.CacheControl;
 import com.metaphor.order.client.model.Order;
+import com.metaphor.order.response.EntityNotFoundException;
 import com.metaphor.order.service.OrderService;
 import com.wordnik.swagger.annotations.*;
 import org.hibernate.validator.constraints.Length;
@@ -50,6 +50,11 @@ public class OrderResource {
     public List<Order> canCancelledOrders(@ApiParam(value = "some can be cancelled orders' number", allowMultiple = true)
                                           @PathParam("numbers") String numbers) {
 
-        return ImmutableList.of();
+        List<Order> orders = service.canCancelledOrders(numbers);
+        if (orders.isEmpty()) {
+            throw new EntityNotFoundException("No orders can be cancelled");
+        }
+
+        return orders;
     }
 }

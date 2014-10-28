@@ -3,6 +3,7 @@ package com.metaphor.interfaces.application;
 import com.metaphor.commons.http.CacheControlFilter;
 import com.metaphor.interfaces.ObjectMapperResolver;
 import com.metaphor.order.client.binder.OrderClientBinder;
+import com.metaphor.order.response.EntityNotFoundMapper;
 import com.metaphor.order.service.binder.OrderServiceBinder;
 import com.wordnik.swagger.jaxrs.listing.ApiListingResourceJSON;
 import com.wordnik.swagger.jersey.listing.JerseyApiDeclarationProvider;
@@ -32,6 +33,7 @@ public class Application extends ResourceConfig {
 
         register(ObjectMapperResolver.class);
         register(CacheControlFilter.class);
+        register(EntityNotFoundMapper.class);
 
         Resource.Builder builder = Resource.builder()
                 .path("programmatic");

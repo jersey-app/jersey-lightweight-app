@@ -9,6 +9,7 @@ import javax.inject.Inject;
 import java.util.List;
 
 import static com.google.common.collect.FluentIterable.from;
+import static com.metaphor.order.service.rules.CanCanceledOrderRules.canCancledOrder;
 
 public class OrderService {
     private static final Splitter COMMA_SPLITTER = Splitter.on(',').omitEmptyStrings().trimResults();
@@ -22,5 +23,11 @@ public class OrderService {
     public List<Order> orders(String numbers) {
         ImmutableSet<String> numberSet = from(COMMA_SPLITTER.split(numbers)).toSet();
         return client.getOrders(numberSet);
+    }
+
+    public List<Order> canCancelledOrders(String numbers) {
+        ImmutableSet<String> numberSet = from(COMMA_SPLITTER.split(numbers)).toSet();
+        return from(client.getOrders(numberSet)).filter(canCancledOrder())
+                .toList();
     }
 }
