@@ -14,6 +14,10 @@ public class StandaloneRunner {
         URI baseUri = fromUri("http://localhost/").port(8081).build();
         HttpServer server = GrizzlyHttpServerFactory.createHttpServer(baseUri, new Application());
         server.start();
-        while (true) System.in.read();
+        try {
+            Thread.currentThread().join();
+        } catch(InterruptedException e) {
+            server.shutdownNow();
+        }
     }
 }
